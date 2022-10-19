@@ -13,6 +13,7 @@
 #include "CurrentThread.h"
 class Channel;
 class Poller;
+class TimerHeap;
 
 class EventLoop : noncopyable{
 public:
@@ -24,7 +25,8 @@ public:
     // 退出事件循环
     void quit();
     TimeStamp pollReturnTime() const {return pollReturnTime_;}
-
+    void runAfter(int delay, Functor cb);
+    void runEvery(int delay, int interval, Functor cb);
     // 在当前loop执行cb
     void runInLoop(Functor cb);
     // 把cb放入队列，唤醒loop所在线程，执行cb
@@ -52,5 +54,5 @@ private:
     ChannelList activeChannels_;
     Channel *currentActiveChannel_;
     std::mutex mutex_; // 用于确保vector容器的线程安全
-
+    std::unique_ptr<TimerHeap> timer_;
 };

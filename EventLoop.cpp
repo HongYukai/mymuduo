@@ -6,6 +6,7 @@
 #include "Channel.h"
 #include "Logger.h"
 #include "Poller.h"
+#include "TimerHeap.h"
 #include <sys/eventfd.h>
 #include <fcntl.h>
 #include <unistd.h>
@@ -34,6 +35,7 @@ EventLoop::EventLoop()
     , wakeupFd_(createEventFd())
     , wakeupChannel_(new Channel(this, wakeupFd_))
     , currentActiveChannel_(nullptr)
+    , timer_(new TimerHeap(100, this))
 {
     LOG_INFO("EventLoop %p created in thread %d\n", this, threadId_);
     if (t_loopInThisThread) {
@@ -83,6 +85,7 @@ void EventLoop::quit() {
     if (!isInLoopThread()) {
         wakeUp();
     }
+    LOG_INFO("loop %p has quited", this);
 }
 
 void EventLoop::runInLoop(Functor cb) {
@@ -137,6 +140,14 @@ void EventLoop::doPendingFunctors() {
         functor();
     }
     callingPendingFunctors_ = false;
+}
+
+void EventLoop::runAfter(int delay, Functor cb) {
+    timer_->addTimerInLoop(delay, 0, std::move(cb));
+}
+
+void EventLoop::runEvery(int delay, int interval, EventLoop::Functor cb) {
+    timer_->addTimerInLoop(delay, interval, std::move(cb));
 }
 
 

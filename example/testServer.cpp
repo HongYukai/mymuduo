@@ -37,11 +37,16 @@ public:
     }
 };
 
+void cb() {
+    std::cout << "hyk is so handsome!" << std::endl;
+}
+
 int main() {
     EventLoop loop;
     InetAddress addr(8989);
     EchoServer server(&loop, addr, "EchoServer-01");
     server.start();
+    loop.runEvery(3, 3, cb);
     loop.loop();
 }
 

@@ -8,21 +8,26 @@
 #include <netinet/in.h>
 #include <functional>
 #include <memory>
+#include <utility>
+#include "Channel.h"
+#include "EventLoop.h"
 
 class Timer;
 
-struct client_data {
-    sockaddr_in address_;
-    int sock_fd_;
-    std::weak_ptr<Timer> timer_;
-    client_data(sockaddr_in address, int sock_fd) : address_(address), sock_fd_(sock_fd) {}
-};
+using TimeOutCallback = std::function<void ()>;
 
-struct Timer {
+class Timer {
+public:
+    explicit Timer(int delay, int interval, TimeOutCallback cb) : expire_(delay + time(NULL)), interval_(interval), repeat_(interval > 0), cb_(std::move(cb)) {}
+    bool repeat() const {return repeat_;}
+    time_t expiration() const {return expire_;}
+    void run() const {if (cb_) cb_();}
+    void cancel() {cb_ = nullptr;}
+    void restart() {expire_ = time(NULL) + interval_;}
+private:
     time_t expire_;  // 定时器过期的绝对时间
-    std::shared_ptr<client_data> user_data_;
-    explicit Timer(int delay) : expire_(delay + time(NULL)) {}
-    using TimeOutCallback = std::function<void (std::shared_ptr<client_data>)>;
+    const int interval_;
+    const bool repeat_;
     TimeOutCallback cb_;
 };
 
@@ -35,6 +40,7 @@ public:
     virtual ~TimerContainer() = default;
     virtual void addTimer(std::shared_ptr<Timer> timer) = 0;
     virtual void deleteTimer(std::shared_ptr<Timer> timer) = 0;
-    virtual void popTimer() = 0;
+    virtual std::shared_ptr<Timer> popTimer() = 0;
     virtual void tick() = 0;
+
 };
