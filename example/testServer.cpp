@@ -4,6 +4,7 @@
 
 #include <mymuduo/TcpServer.h>
 #include <mymuduo/Logger.h>
+#include <unistd.h>
 
 class EchoServer {
 private:
@@ -38,7 +39,7 @@ public:
 };
 
 void cb() {
-    std::cout << "hyk is so handsome!" << std::endl;
+    // usleep(100);
 }
 
 int main() {
@@ -46,7 +47,12 @@ int main() {
     InetAddress addr(8989);
     EchoServer server(&loop, addr, "EchoServer-01");
     server.start();
-    loop.runEvery(3, 3, cb);
+    int a = 5, b = 3, c = 15;
+    int i;
+    for (i = 0; i < 999999; i++) {
+        loop.runEvery(a, b, cb);
+    }
+    loop.runAfter(c, std::bind(&EventLoop::quit, &loop));
     loop.loop();
 }
 

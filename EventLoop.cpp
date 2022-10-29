@@ -35,7 +35,7 @@ EventLoop::EventLoop()
     , wakeupFd_(createEventFd())
     , wakeupChannel_(new Channel(this, wakeupFd_))
     , currentActiveChannel_(nullptr)
-    , timer_(new TimerHeap(100, this))
+    , timer_(new TimerHeap(this))
 {
     LOG_INFO("EventLoop %p created in thread %d\n", this, threadId_);
     if (t_loopInThisThread) {
@@ -73,7 +73,6 @@ void EventLoop::loop() {
         for (auto channel : activeChannels_) {
             channel->handleEvent(pollReturnTime_);
         }
-        // main loop驱动working loop进行处理
         doPendingFunctors();
     }
 }
@@ -142,11 +141,11 @@ void EventLoop::doPendingFunctors() {
     callingPendingFunctors_ = false;
 }
 
-void EventLoop::runAfter(int delay, Functor cb) {
+void EventLoop::runAfter(double delay, Functor cb) {
     timer_->addTimerInLoop(delay, 0, std::move(cb));
 }
 
-void EventLoop::runEvery(int delay, int interval, EventLoop::Functor cb) {
+void EventLoop::runEvery(double delay, double interval, EventLoop::Functor cb) {
     timer_->addTimerInLoop(delay, interval, std::move(cb));
 }
 

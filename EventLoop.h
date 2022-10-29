@@ -25,8 +25,8 @@ public:
     // 退出事件循环
     void quit();
     TimeStamp pollReturnTime() const {return pollReturnTime_;}
-    void runAfter(int delay, Functor cb);
-    void runEvery(int delay, int interval, Functor cb);
+    void runAfter(double delay, Functor cb);
+    void runEvery(double delay, double interval, Functor cb);
     // 在当前loop执行cb
     void runInLoop(Functor cb);
     // 把cb放入队列，唤醒loop所在线程，执行cb

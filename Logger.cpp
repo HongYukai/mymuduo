@@ -37,5 +37,5 @@ void Logger::log(std::string msg) {
     }
 
     // 打印时间和msg
-    std::cout << TimeStamp::now().toString() << "  " << msg << std::endl;
+    std::cout << TimeStamp::toString() << "  " << msg << std::endl;
 }

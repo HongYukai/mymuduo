@@ -6,9 +6,11 @@
 
 #include "Timer.h"
 #include "Logger.h"
+#include "four_heap.h"
 #include <sys/timerfd.h>
 #include <vector>
 #include <queue>
+#include <sys/time.h>
 
 int createTimerfd();
 
@@ -20,16 +22,16 @@ struct cmp {
 
 class TimerHeap : public TimerContainer {
 private:
-    std::priority_queue<std::shared_ptr<Timer>, std::vector<std::shared_ptr<Timer>>, cmp> timerHeap_;
+    Four_heap<std::shared_ptr<Timer>, cmp> timerHeap_;
+//    std::priority_queue<std::shared_ptr<Timer>, std::vector<std::shared_ptr<Timer>>, cmp> timerHeap_;
     // std::vector<std::shared_ptr<Timer>> timerVec_;
 public:
-    explicit TimerHeap(int cap, EventLoop *loop) : loop_(loop), timerfd_(createTimerfd()), timerfdChannel_(loop, timerfd_)  {
-        capacity_ = cap;
-        cur_ = 0;
+    explicit TimerHeap(EventLoop *loop) : loop_(loop), timerfd_(createTimerfd()), timerfdChannel_(loop, timerfd_)  {
         timerfdChannel_.setReadCallback(std::bind(&TimerHeap::handleRead, this));
         timerfdChannel_.enableReading();
+        timeDelay_.first = timeDelay_.second = 0;
     }
-    void addTimerInLoop(int delay, double interval, TimeOutCallback cb);
+    void addTimerInLoop(double delay, double interval, TimeOutCallback cb);
     ~TimerHeap() override;
 
 private:
@@ -43,6 +45,6 @@ private:
     int timerfd_;
     Channel timerfdChannel_;
     EventLoop *loop_;
-
+    pair<int64_t , int> timeDelay_;
 
 };

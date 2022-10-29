@@ -11,6 +11,7 @@
 #include <utility>
 #include "Channel.h"
 #include "EventLoop.h"
+#include "Timestamp.h"
 
 class Timer;
 
@@ -18,15 +19,15 @@ using TimeOutCallback = std::function<void ()>;
 
 class Timer {
 public:
-    explicit Timer(int delay, int interval, TimeOutCallback cb) : expire_(delay + time(NULL)), interval_(interval), repeat_(interval > 0), cb_(std::move(cb)) {}
+    explicit Timer(double delay, double interval, TimeOutCallback cb) : expire_(static_cast<int64_t>(delay * 1000 * 1000) + TimeStamp::now()), interval_(static_cast<int64_t>(interval * 1000 * 1000)), repeat_(interval > 0), cb_(std::move(cb)) {}
     bool repeat() const {return repeat_;}
-    time_t expiration() const {return expire_;}
+    int64_t expiration() const {return expire_;}
     void run() const {if (cb_) cb_();}
     void cancel() {cb_ = nullptr;}
-    void restart() {expire_ = time(NULL) + interval_;}
+    void restart() {expire_ = TimeStamp::now() + interval_;}
 private:
-    time_t expire_;  // 定时器过期的绝对时间
-    const int interval_;
+    int64_t expire_;  // 定时器过期的绝对时间
+    const int64_t interval_;
     const bool repeat_;
     TimeOutCallback cb_;
 };

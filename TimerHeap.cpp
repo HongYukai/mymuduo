@@ -25,23 +25,22 @@ void readTimerfd(int timerfd) {
     }
 }
 
-struct timespec howMuchTimeFromNow(time_t when)
+struct timespec howMuchTimeFromNow(int64_t when)
 {
-    int64_t microseconds = 100000 * (when
-                           - time(NULL));
+    int64_t microseconds = when - TimeStamp::now();
     if (microseconds < 100)
     {
         microseconds = 100;
     }
     struct timespec ts;
     ts.tv_sec = static_cast<time_t>(
-            microseconds / (100000));
+            microseconds / (1000 * 1000));
     ts.tv_nsec = static_cast<long>(
-            (microseconds % 100000) * 1000);
+            (microseconds % (1000 * 1000)) * 1000);
     return ts;
 }
 
-void resetTimerfd(int timerfd, time_t expiration)
+void resetTimerfd(int timerfd, int64_t expiration)
 {
     // wake up loop by timerfd_settime()
     struct itimerspec newValue;
@@ -49,7 +48,8 @@ void resetTimerfd(int timerfd, time_t expiration)
     struct timespec t;
     memset(&newValue, 0, sizeof newValue);
     memset(&oldValue, 0, sizeof oldValue);
-    newValue.it_value = howMuchTimeFromNow(expiration);;
+    newValue.it_value = howMuchTimeFromNow(expiration);
+    // cout << newValue.it_value.tv_sec << " " << newValue.it_value.tv_nsec << endl;
     int ret = ::timerfd_settime(timerfd, 0, &newValue, &oldValue);
     if (ret)
     {
@@ -60,23 +60,21 @@ void resetTimerfd(int timerfd, time_t expiration)
 
 
 void TimerHeap::addTimer(std::shared_ptr<Timer> timer) {
-    if (!timer || cur_ >= capacity_) return;
+    if (!timer) return;
     timerHeap_.push(timer);
-    cur_++;
     resetTimerfd(timerfd_, timer->expiration());
 }
 
 std::shared_ptr<Timer> TimerHeap::popTimer() {
-    if (cur_ == 0) return nullptr;
+    if (timerHeap_.empty()) return nullptr;
     auto top = timerHeap_.top();
     timerHeap_.pop();
-    cur_--;
     return top;
 }
 
 void TimerHeap::tick() {
-    time_t t = time( NULL );
-    while (cur_ > 0) {
+    int64_t t = TimeStamp::now();
+    while (!timerHeap_.empty()) {
         auto temp = timerHeap_.top().get();
         if (!temp) return;
         if (t >= temp->expiration()) {
@@ -93,7 +91,7 @@ void TimerHeap::deleteTimer(std::shared_ptr<Timer> timer) {
     timer->cancel();
 }
 
-void TimerHeap::addTimerInLoop(int delay, double interval, TimeOutCallback cb) {
+void TimerHeap::addTimerInLoop(double delay, double interval, TimeOutCallback cb) {
     loop_->runInLoop(std::bind(&TimerHeap::addTimer, this, std::make_shared<Timer>(delay, interval, std::move(cb))));
 }
 
@@ -102,6 +100,10 @@ void TimerHeap::handleRead() {
     tick();
     for (auto &timer : expired_) {
         if (timer) {
+            struct timeval t;
+            gettimeofday(&t, NULL);
+            timeDelay_.first += (1000 * 1000) * t.tv_sec + t.tv_usec - timer->expiration();
+            timeDelay_.second++;
             timer->run();
         }
     }
@@ -122,5 +124,8 @@ void TimerHeap::reset(const std::vector<std::shared_ptr<Timer>> &expired) {
 }
 
 
-TimerHeap::~TimerHeap() = default;
+TimerHeap::~TimerHeap() {
+    std::cout << timeDelay_.second << endl;
+    std::cout << timeDelay_.first * 1.0 / (1000 * 1000) /  timeDelay_.second << std::endl;
+}
 
