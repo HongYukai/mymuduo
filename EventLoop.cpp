@@ -84,7 +84,7 @@ void EventLoop::quit() {
     if (!isInLoopThread()) {
         wakeUp();
     }
-    LOG_INFO("loop %p has quited", this);
+//    LOG_INFO("loop %p has quited", this);
 }
 
 void EventLoop::runInLoop(Functor cb) {
@@ -142,11 +142,11 @@ void EventLoop::doPendingFunctors() {
 }
 
 void EventLoop::runAfter(double delay, Functor cb) {
-    timer_->addTimerInLoop(delay, 0, std::move(cb));
+    timer_->addTimerInLoop(delay, false, std::move(cb));
 }
 
-void EventLoop::runEvery(double delay, double interval, EventLoop::Functor cb) {
-    timer_->addTimerInLoop(delay, interval, std::move(cb));
+void EventLoop::runEvery(double delay, EventLoop::Functor cb) {
+    timer_->addTimerInLoop(delay, true, std::move(cb));
 }
 
 

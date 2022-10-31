@@ -2,6 +2,7 @@
 // Created by 12096 on 2022/10/15.
 //
 #include "TimerHeap.h"
+#include "Clock.h"
 #include <string.h>
 #include <unistd.h>
 
@@ -34,9 +35,9 @@ struct timespec howMuchTimeFromNow(int64_t when)
     }
     struct timespec ts;
     ts.tv_sec = static_cast<time_t>(
-            microseconds / (1000 * 1000));
+            microseconds / (TimeStamp::kMicroSecondsPerSecond));
     ts.tv_nsec = static_cast<long>(
-            (microseconds % (1000 * 1000)) * 1000);
+            (microseconds % (TimeStamp::kMicroSecondsPerSecond)) * 1000);
     return ts;
 }
 
@@ -45,11 +46,10 @@ void resetTimerfd(int timerfd, int64_t expiration)
     // wake up loop by timerfd_settime()
     struct itimerspec newValue;
     struct itimerspec oldValue;
-    struct timespec t;
     memset(&newValue, 0, sizeof newValue);
     memset(&oldValue, 0, sizeof oldValue);
+
     newValue.it_value = howMuchTimeFromNow(expiration);
-    // cout << newValue.it_value.tv_sec << " " << newValue.it_value.tv_nsec << endl;
     int ret = ::timerfd_settime(timerfd, 0, &newValue, &oldValue);
     if (ret)
     {
@@ -61,13 +61,17 @@ void resetTimerfd(int timerfd, int64_t expiration)
 
 void TimerHeap::addTimer(std::shared_ptr<Timer> timer) {
     if (!timer) return;
-    timerHeap_.push(timer);
-    resetTimerfd(timerfd_, timer->expiration());
+    bool earliestChanged = push(timer);
+
+    if (earliestChanged) {
+        resetTimerfd(timerfd_, timer->expiration());
+    }
+
 }
 
 std::shared_ptr<Timer> TimerHeap::popTimer() {
     if (timerHeap_.empty()) return nullptr;
-    auto top = timerHeap_.top();
+    auto top = std::move(timerHeap_.top());
     timerHeap_.pop();
     return top;
 }
@@ -75,10 +79,9 @@ std::shared_ptr<Timer> TimerHeap::popTimer() {
 void TimerHeap::tick() {
     int64_t t = TimeStamp::now();
     while (!timerHeap_.empty()) {
-        auto temp = timerHeap_.top().get();
-        if (!temp) return;
-        if (t >= temp->expiration()) {
-            expired_.push_back(popTimer());
+        if (t >= timerHeap_.top()->expiration()) {
+            expired_.emplace_back(std::move(timerHeap_.top()));
+            timerHeap_.pop();
         }
         else {
             break;
@@ -91,41 +94,55 @@ void TimerHeap::deleteTimer(std::shared_ptr<Timer> timer) {
     timer->cancel();
 }
 
-void TimerHeap::addTimerInLoop(double delay, double interval, TimeOutCallback cb) {
-    loop_->runInLoop(std::bind(&TimerHeap::addTimer, this, std::make_shared<Timer>(delay, interval, std::move(cb))));
+void TimerHeap::addTimerInLoop(double delay, bool repeat, TimeOutCallback cb) {
+    loop_->runInLoop(std::bind(&TimerHeap::addTimer, this, std::make_shared<Timer>(delay, repeat, std::move(cb))));
 }
 
 void TimerHeap::handleRead() {
+    auto now = TimeStamp::now();
     readTimerfd(timerfd_);
     tick();
     for (auto &timer : expired_) {
         if (timer) {
-            struct timeval t;
-            gettimeofday(&t, NULL);
-            timeDelay_.first += (1000 * 1000) * t.tv_sec + t.tv_usec - timer->expiration();
-            timeDelay_.second++;
+//            struct timeval t;
+//            gettimeofday(&t, NULL);
+//            timeDelay_.first += (1000 * 1000) * t.tv_sec + t.tv_usec - timer->expiration();
+//            timeDelay_.second++;
             timer->run();
         }
     }
-    reset(expired_);
+    reset(expired_, now);
 }
 
 
-void TimerHeap::reset(const std::vector<std::shared_ptr<Timer>> &expired) {
+void TimerHeap::reset(const std::vector<std::shared_ptr<Timer>> &expired, int64_t now) {
     for (auto & timer : expired) {
         if (timer) {
             if (timer->repeat()) {
-                timer->restart();
-                addTimer(timer);
+                timer->restart(now);
+                push(timer);
             }
         }
     }
     expired_.clear();
+    if (!timerHeap_.empty()) {
+        resetTimerfd(timerfd_, timerHeap_.top()->expiration());
+    }
 }
 
 
 TimerHeap::~TimerHeap() {
-    std::cout << timeDelay_.second << endl;
-    std::cout << timeDelay_.first * 1.0 / (1000 * 1000) /  timeDelay_.second << std::endl;
+    timerfdChannel_.disableAll();
+    timerfdChannel_.remove();
+    ::close(timerfd_);
+//    std::cout << timeDelay_.second << std::endl;
+//    std::cout << static_cast<double>(timeDelay_.first) / (1000 * 1000) /  timeDelay_.second << std::endl;
 }
 
+bool TimerHeap::push(std::shared_ptr<Timer> timer) {
+    timerHeap_.push(timer);
+    if (timerHeap_.top() != timer) {
+        return false;
+    }
+    return true;
+}

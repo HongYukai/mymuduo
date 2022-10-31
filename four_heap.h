@@ -21,6 +21,7 @@ public:
     T top();
     void pop();
     void push(T Node);
+    size_t size();
 private:
     void fixdown();
     void fixup();
@@ -141,6 +142,11 @@ void Four_heap<T, Comparer>::fixup()
             break;
     }
     vec[curIdx] = key_time;
+}
+
+template<typename T, typename Comparer>
+size_t Four_heap<T, Comparer>::size() {
+    return vec.size();
 }
 //
 //template <typename T>

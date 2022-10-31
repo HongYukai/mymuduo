@@ -13,20 +13,35 @@
 #include "four_heap.h"
 
 
+
+
 using namespace std;
 
+
 int main() {
-    multiset<int> s;
+    set<int> s;
     priority_queue<int, vector<int>, greater<int>> pq;
     Four_heap<int> fh;
-    for (auto i = 0; i < 2000000; i++) {
-        auto x = rand() % 800000;
-        s.insert(x);
-        pq.push(x);
-        fh.push(x);
-    }
     struct timeval t1, t2;
-    int x = 200000;
+    gettimeofday(&t1, NULL);
+    for (auto i = 0; i < 2000000; i++) {
+        s.insert(i);
+    }
+    gettimeofday(&t2, NULL);
+    cout << "The time of inserting k nums by rb-tree is " << 1000000 * (t2.tv_sec - t1.tv_sec) + (t2.tv_usec - t1.tv_usec) << endl;
+    gettimeofday(&t1, NULL);
+    for (auto i = 0; i < 2000000; i++) {
+        pq.push(i);
+    }
+    gettimeofday(&t2, NULL);
+    cout << "The time of inserting k nums by two heap is " << 1000000 * (t2.tv_sec - t1.tv_sec) + (t2.tv_usec - t1.tv_usec) << endl;
+    gettimeofday(&t1, NULL);
+    for (auto i = 0; i < 2000000; i++) {
+        fh.push(i);
+    }
+    gettimeofday(&t2, NULL);
+    cout << "The time of inserting k nums by four heap is " << 1000000 * (t2.tv_sec - t1.tv_sec) + (t2.tv_usec - t1.tv_usec) << endl;
+    int x = 50000;
     vector<int> v;
     gettimeofday(&t1, NULL);
     auto it = s.lower_bound(x);

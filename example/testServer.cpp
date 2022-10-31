@@ -31,7 +31,7 @@ public:
         {
             server_.setConnectionCallback(std::bind(&EchoServer::onConnection, this, std::placeholders::_1));
             server_.setMessageCallback(std::bind(&EchoServer::onMessage, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
-            server_.setThreadNum(3);
+            server_.setThreadNum(0);
         }
     void start() {
         server_.start();
@@ -40,6 +40,7 @@ public:
 
 void cb() {
     // usleep(100);
+//    std::cout << "hyk is so handsome" << std::endl;
 }
 
 int main() {
@@ -47,11 +48,15 @@ int main() {
     InetAddress addr(8989);
     EchoServer server(&loop, addr, "EchoServer-01");
     server.start();
-    int a = 5, b = 3, c = 15;
+    int b = 3, c = 20;
     int i;
-    for (i = 0; i < 999999; i++) {
-        loop.runEvery(a, b, cb);
+
+    for (i = 0; i < 9999999; i++) {
+        int x = rand() % 10 + 1;
+        loop.runAfter(x, cb);
     }
+
+    // loop.runEvery(1, 1, cb);
     loop.runAfter(c, std::bind(&EventLoop::quit, &loop));
     loop.loop();
 }

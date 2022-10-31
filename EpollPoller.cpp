@@ -27,19 +27,19 @@ EpollPoller::~EpollPoller() {
 }
 
 TimeStamp EpollPoller::poll(int timeoutMs, ChannelList *activeChannels) {
-    LOG_INFO("fd total count: %lu\n", channels_.size());
+//    LOG_INFO("fd total count: %lu\n", channels_.size());
     int numEvents = ::epoll_wait(epollfd_, &*events_.begin(), static_cast<int>(events_.size()), timeoutMs);
     int saveErrno = errno;
     TimeStamp now(TimeStamp::now());
     if (numEvents > 0) {
-        LOG_INFO("%d events happened\n", numEvents);
+//        LOG_INFO("%d events happened\n", numEvents);
         fillActiveChannels(numEvents, activeChannels);
         if (numEvents == events_.size()) {
             events_.resize(events_.size() * 2);
         }
     }
     else if (numEvents == 0) {
-        LOG_INFO("%s timeout!\n", __FUNCTION__ );
+//        LOG_INFO("%s timeout!\n", __FUNCTION__ );
     }
     else {
         // 不是被系统调用中断的错误
@@ -54,7 +54,7 @@ TimeStamp EpollPoller::poll(int timeoutMs, ChannelList *activeChannels) {
 
 void EpollPoller::updateChannel(Channel *channel) {
     const int index = channel->getIndex();
-    LOG_INFO("fd=%d, events=%d, index=%d\n", channel->getFd(), channel->getEvents(), index);
+//    LOG_INFO("fd=%d, events=%d, index=%d\n", channel->getFd(), channel->getEvents(), index);
     if (index == kNew || index == kDeleted) {
         if (index == kNew) {
             auto fd = channel->getFd();
