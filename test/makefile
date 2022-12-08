@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .PHONY:compile
 compile:
 	g++ -c test.cpp -o timer_test.o
@@ -20,3 +21,19 @@ run-th:
 	make link
 	./timerHeap_test
 
+=======
+.PHONY:compile
+compile:
+	g++ -c test.cpp -o timer_test.o
+.PHONY:link
+link:
+	g++ -o timer_test timer_test.o
+.PHONY:clean
+clean:
+	rm -f *.o timer_test
+.PHONY:run
+run:
+	make compile
+	make link
+	./timer_test
+>>>>>>> c02fd5c823787dd707ea2627ba81e2b84f3866ee
