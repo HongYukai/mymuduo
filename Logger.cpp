@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 //
 // Created by 12096 on 2022/9/6.
 //
@@ -40,46 +39,3 @@ void Logger::log(std::string msg) {
     // 打印时间和msg
     std::cout << TimeStamp::toString() << "  " << msg << std::endl;
 }
-=======
-//
-// Created by 12096 on 2022/9/6.
-//
-
-#include "Logger.h"
-#include "Timestamp.h"
-#include <iostream>
-
-Logger& Logger::instance() {
-    static Logger logger;
-    return logger;
-}
-
-void Logger::setLogLevel(int level) {
-    logLevel_ = level;
-}
-
-void Logger::log(std::string msg) {
-    switch (logLevel_) {
-        case INFO : {
-            std::cout << "[INFO]";
-            break;
-        }
-        case ERROR : {
-            std::cout << "[ERROR]";
-            break;
-        }
-        case FATAL : {
-            std::cout << "[FATAL]";
-            break;
-        }
-        case DEBUG : {
-            std::cout << "[DEBUG]";
-            break;
-        }
-        default: break;
-    }
-
-    // 打印时间和msg
-    std::cout << TimeStamp::toString() << "  " << msg << std::endl;
-}
->>>>>>> c02fd5c823787dd707ea2627ba81e2b84f3866ee
