@@ -5,12 +5,18 @@
 #pragma once
 
 #include "noncopyable.h"
+<<<<<<< HEAD
 #include "Logger_Helper.h"
+=======
+>>>>>>> 621da876cdd7a7a2342272d5ce339afcfe6d5b01
 
 #include <string>
 
 /* ##__VA_ARGS__用于获取可变参数列表 */
+<<<<<<< HEAD
 #ifdef INFO
+=======
+>>>>>>> 621da876cdd7a7a2342272d5ce339afcfe6d5b01
 #define LOG_INFO(logmsgFormat, ...) \
     do                              \
     {                               \
@@ -20,9 +26,13 @@
         snprintf(buf, 1024, logmsgFormat, ##__VA_ARGS__); \
         logger.log(buf);            \
     } while (0)
+<<<<<<< HEAD
 #else
 #define LOG_INFO(logmsgFormat, ...)
 #endif
+=======
+
+>>>>>>> 621da876cdd7a7a2342272d5ce339afcfe6d5b01
 
 #define LOG_ERROR(logmsgFormat, ...) \
     do                              \
@@ -44,7 +54,11 @@
         logger.log(buf);            \
     } while (0)
 
+<<<<<<< HEAD
 #ifdef DEBUG
+=======
+#ifdef MUDUO_DEBUG
+>>>>>>> 621da876cdd7a7a2342272d5ce339afcfe6d5b01
 #define LOG_DEBUG(logmsgFormat, ...) \
     do                              \
     {                               \

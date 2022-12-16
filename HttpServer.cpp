@@ -43,7 +43,10 @@ void HttpServer::onMessage(const TcpConnectionPtr &conn, Buffer *buf, TimeStamp 
     }
     if (httpContext->gotAll()) {
         onRequest(conn, httpContext->request());
+<<<<<<< HEAD
         httpContext->reset();
+=======
+>>>>>>> 621da876cdd7a7a2342272d5ce339afcfe6d5b01
     }
 }
 

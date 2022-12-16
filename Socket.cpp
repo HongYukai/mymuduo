@@ -17,13 +17,22 @@ Socket::~Socket() {
 
 void Socket::bindAddress(const InetAddress &localaddr) {
     if (bind(sockfd_, (sockaddr*)localaddr.getAddr(), sizeof(sockaddr_in)) != 0) {
+<<<<<<< HEAD
         LOG_FATAL("bind sockfd %d fail, errno: %d\n", sockfd_, errno);
+=======
+        LOG_FATAL("bind sockfd %d fail\n", sockfd_);
+>>>>>>> 621da876cdd7a7a2342272d5ce339afcfe6d5b01
     }
 }
 
 void Socket::listen() {
+<<<<<<< HEAD
     if (::listen(sockfd_, 65536) != 0) {
         LOG_FATAL("bind sockfd %d fail, errno: %d\n", sockfd_, errno);
+=======
+    if (::listen(sockfd_, 1024) != 0) {
+        LOG_FATAL("bind sockfd %d fail\n", sockfd_);
+>>>>>>> 621da876cdd7a7a2342272d5ce339afcfe6d5b01
     }
 }
 
@@ -36,9 +45,12 @@ int Socket::accept(InetAddress *peeraddr) {
         peeraddr->setAddr(addr);
         LOG_INFO("accept fd:%d successfully\n", connfd);
     }
+<<<<<<< HEAD
     else {
         LOG_ERROR("error! %d\n", errno);
     }
+=======
+>>>>>>> 621da876cdd7a7a2342272d5ce339afcfe6d5b01
     return connfd;
 }
 

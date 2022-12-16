@@ -11,7 +11,10 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.16.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.16.3/CMakeSystem.cmake"
   "CMakeLists.txt"
+<<<<<<< HEAD
   "Logger_Helper.h.in"
+=======
+>>>>>>> 621da876cdd7a7a2342272d5ce339afcfe6d5b01
   "/usr/share/cmake-3.16/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.16/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake-3.16/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake"
@@ -41,7 +44,10 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
+<<<<<<< HEAD
   "Logger_Helper.h"
+=======
+>>>>>>> 621da876cdd7a7a2342272d5ce339afcfe6d5b01
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
