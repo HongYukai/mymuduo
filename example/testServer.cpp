@@ -45,7 +45,6 @@ void cb() {
 
 int main() {
     EventLoop loop;
-<<<<<<< HEAD
     InetAddress addr(8989, "192.168.5.141");
     EchoServer server(&loop, addr, "EchoServer-01");
     server.start();
@@ -61,22 +60,6 @@ int main() {
 //    // loop.runEvery(1, 1, cb);
 //    loop.runAfter(c, std::bind(&EventLoop::quit, &loop));
 //    loop.loop();
-=======
-    InetAddress addr(8989);
-    EchoServer server(&loop, addr, "EchoServer-01");
-    server.start();
-    int b = 3, c = 20;
-    int i;
-
-    for (i = 0; i < 9999999; i++) {
-        int x = rand() % 10 + 1;
-        loop.runAfter(x, cb);
-    }
-
-    // loop.runEvery(1, 1, cb);
-    loop.runAfter(c, std::bind(&EventLoop::quit, &loop));
-    loop.loop();
->>>>>>> 621da876cdd7a7a2342272d5ce339afcfe6d5b01
 }
 
 

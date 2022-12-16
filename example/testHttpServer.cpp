@@ -4,7 +4,6 @@
 
 #include "../HttpServer.h"
 
-<<<<<<< HEAD
 void testHttpCallback(const HttpRequest& httpRequest, HttpResponse* httpResponse) {
     httpResponse->setStatusCode(HttpResponse::OK);
     httpResponse->setStatusMessage("OK");
@@ -41,11 +40,6 @@ int main(int argc, char* argv[]) {
     HttpServer httpServer(&loop, InetAddress(std::stoi(argv[1])), "hongws", TcpServer::kReusePort);
     httpServer.setThreadNum(3);
     httpServer.setHttpCallback(testHttpCallback);
-=======
-int main() {
-    EventLoop loop;
-    HttpServer httpServer(&loop, InetAddress(9999, "192.168.5.141"), "hongyk's http server", TcpServer::kReusePort);
->>>>>>> 621da876cdd7a7a2342272d5ce339afcfe6d5b01
     httpServer.start();
     loop.loop();
 }

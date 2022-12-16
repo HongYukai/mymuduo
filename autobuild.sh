@@ -1,12 +1,8 @@
 # 有error直接退出
 set -e
 
-<<<<<<< HEAD
 #cmake -DCMAKE_BUILD_TYPE=Release . && make
 cmake . && make
-=======
-cmake -DCMAKE_BUILD_TYPE=Release . && make
->>>>>>> 621da876cdd7a7a2342272d5ce339afcfe6d5b01
 
 # 把头文件拷贝到/usr/include/mymuduo so库拷贝到/usr/lib
 if [ ! -d /usr/include/mymuduo/ ]

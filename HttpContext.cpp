@@ -45,14 +45,11 @@ bool HttpContext::parseRequest(Buffer *buffer, TimeStamp receiveTime) {
         }
         else if (httpRequestParseState_ == EXPECT_BODY) {
             // FIXME
-<<<<<<< HEAD
             hasMore = false;  // just for safety
         }
         else {  // httpRequestParseState_ == GOT_ALL
             // FIXME
             hasMore = false;  // just for safety
-=======
->>>>>>> 621da876cdd7a7a2342272d5ce339afcfe6d5b01
         }
     }
     return ok;

@@ -11,11 +11,7 @@
 class InetAddress{
 public:
     InetAddress() {}
-<<<<<<< HEAD
     explicit InetAddress(uint16_t port, std::string ip = "0.0.0.0");
-=======
-    explicit InetAddress(uint16_t port, std::string ip = "127.0.0.1");
->>>>>>> 621da876cdd7a7a2342272d5ce339afcfe6d5b01
     explicit InetAddress(sockaddr_in &addr) : addr_(addr) {}
     std::string toIp() const;
     std::string toIpPort() const;
