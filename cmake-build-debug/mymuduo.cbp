@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="mymuduo"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/hongyk/mymuduo/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/hongyk/mymuduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/hongyk/mymuduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/hongyk/mymuduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/hongyk/mymuduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/hongyk/mymuduo/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/hongyk/mymuduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/hongyk/mymuduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/hongyk/mymuduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/hongyk/mymuduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/hongyk/mymuduo/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/hongyk/mymuduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/hongyk/mymuduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/hongyk/mymuduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/hongyk/mymuduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="mymuduo">
+				<Option output="/home/hongyk/mymuduo/lib/libmymuduo.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/hongyk/mymuduo/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/hongyk/mymuduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 mymuduo"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/hongyk/mymuduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/hongyk/mymuduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/hongyk/mymuduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="mymuduo/fast">
+				<Option output="/home/hongyk/mymuduo/lib/libmymuduo.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/hongyk/mymuduo/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/hongyk/mymuduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 mymuduo/fast"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/hongyk/mymuduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/hongyk/mymuduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/hongyk/mymuduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/hongyk/mymuduo/Acceptor.cpp">
+			<Option target="mymuduo"/>
+		</Unit>
+		<Unit filename="/home/hongyk/mymuduo/Acceptor.h">
+			<Option target="mymuduo"/>
+		</Unit>
+		<Unit filename="/home/hongyk/mymuduo/Buffer.cpp">
+			<Option target="mymuduo"/>
+		</Unit>
+		<Unit filename="/home/hongyk/mymuduo/Buffer.h">
+			<Option target="mymuduo"/>
+		</Unit>
+		<Unit filename="/home/hongyk/mymuduo/Channel.cpp">
+			<Option target="mymuduo"/>
+		</Unit>
+		<Unit filename="/home/hongyk/mymuduo/Channel.h">
+			<Option target="mymuduo"/>
+		</Unit>
+		<Unit filename="/home/hongyk/mymuduo/CurrentThread.cpp">
+			<Option target="mymuduo"/>
+		</Unit>
+		<Unit filename="/home/hongyk/mymuduo/CurrentThread.h">
+			<Option target="mymuduo"/>
+		</Unit>
+		<Unit filename="/home/hongyk/mymuduo/DefaultPoller.cpp">
+			<Option target="mymuduo"/>
+		</Unit>
+		<Unit filename="/home/hongyk/mymuduo/EpollPoller.cpp">
+			<Option target="mymuduo"/>
+		</Unit>
+		<Unit filename="/home/hongyk/mymuduo/EpollPoller.h">
+			<Option target="mymuduo"/>
+		</Unit>
+		<Unit filename="/home/hongyk/mymuduo/EventLoop.cpp">
+			<Option target="mymuduo"/>
+		</Unit>
+		<Unit filename="/home/hongyk/mymuduo/EventLoop.h">
+			<Option target="mymuduo"/>
+		</Unit>
+		<Unit filename="/home/hongyk/mymuduo/EventLoopThread.cpp">
+			<Option target="mymuduo"/>
+		</Unit>
+		<Unit filename="/home/hongyk/mymuduo/EventLoopThread.h">
+			<Option target="mymuduo"/>
+		</Unit>
+		<Unit filename="/home/hongyk/mymuduo/EventLoopThreadPool.cpp">
+			<Option target="mymuduo"/>
+		</Unit>
+		<Unit filename="/home/hongyk/mymuduo/EventLoopThreadPool.h">
+			<Option target="mymuduo"/>
+		</Unit>
+		<Unit filename="/home/hongyk/mymuduo/HeapTimer.cpp">
+			<Option target="mymuduo"/>
+		</Unit>
+		<Unit filename="/home/hongyk/mymuduo/HeapTimer.h">
+			<Option target="mymuduo"/>
+		</Unit>
+		<Unit filename="/home/hongyk/mymuduo/InetAddress.cpp">
+			<Option target="mymuduo"/>
+		</Unit>
+		<Unit filename="/home/hongyk/mymuduo/InetAddress.h">
+			<Option target="mymuduo"/>
+		</Unit>
+		<Unit filename="/home/hongyk/mymuduo/Logger.cpp">
+			<Option target="mymuduo"/>
+		</Unit>
+		<Unit filename="/home/hongyk/mymuduo/Logger.h">
+			<Option target="mymuduo"/>
+		</Unit>
+		<Unit filename="/home/hongyk/mymuduo/Poller.cpp">
+			<Option target="mymuduo"/>
+		</Unit>
+		<Unit filename="/home/hongyk/mymuduo/Poller.h">
+			<Option target="mymuduo"/>
+		</Unit>
+		<Unit filename="/home/hongyk/mymuduo/Socket.cpp">
+			<Option target="mymuduo"/>
+		</Unit>
+		<Unit filename="/home/hongyk/mymuduo/Socket.h">
+			<Option target="mymuduo"/>
+		</Unit>
+		<Unit filename="/home/hongyk/mymuduo/TcpConnection.cpp">
+			<Option target="mymuduo"/>
+		</Unit>
+		<Unit filename="/home/hongyk/mymuduo/TcpConnection.h">
+			<Option target="mymuduo"/>
+		</Unit>
+		<Unit filename="/home/hongyk/mymuduo/TcpServer.cpp">
+			<Option target="mymuduo"/>
+		</Unit>
+		<Unit filename="/home/hongyk/mymuduo/TcpServer.h">
+			<Option target="mymuduo"/>
+		</Unit>
+		<Unit filename="/home/hongyk/mymuduo/Thread.cpp">
+			<Option target="mymuduo"/>
+		</Unit>
+		<Unit filename="/home/hongyk/mymuduo/Thread.h">
+			<Option target="mymuduo"/>
+		</Unit>
+		<Unit filename="/home/hongyk/mymuduo/TimeStamp.cpp">
+			<Option target="mymuduo"/>
+		</Unit>
+		<Unit filename="/home/hongyk/mymuduo/library.cpp">
+			<Option target="mymuduo"/>
+		</Unit>
+		<Unit filename="/home/hongyk/mymuduo/library.h">
+			<Option target="mymuduo"/>
+		</Unit>
+		<Unit filename="/home/hongyk/mymuduo/test.cpp">
+			<Option target="mymuduo"/>
+		</Unit>
+		<Unit filename="/home/hongyk/mymuduo/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
