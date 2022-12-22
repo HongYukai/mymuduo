@@ -1,3 +1,0 @@
-/home/hongyk/mymuduo/CMakeFiles/rebuild_cache.dir
-/home/hongyk/mymuduo/CMakeFiles/edit_cache.dir
-/home/hongyk/mymuduo/CMakeFiles/mymuduo.dir
