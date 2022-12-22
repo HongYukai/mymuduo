@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hongyk/mymuduo/Buffer.h
+vector
+-
+string
+-
+algorithm
+-
+cassert
+-
+
+/home/hongyk/mymuduo/HttpResponse.cpp
+HttpResponse.h
+/home/hongyk/mymuduo/HttpResponse.h
+sstream
+-
+
+/home/hongyk/mymuduo/HttpResponse.h
+map
+-
+Buffer.h
+/home/hongyk/mymuduo/Buffer.h
+
