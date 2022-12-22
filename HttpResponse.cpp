@@ -11,7 +11,11 @@ void HttpResponse::appendToBuffer(Buffer *buffer) const {
     ss << "HTTP/1.1 " << statusCode_ << " " << statusMessage_ << enter;
     buffer->append(ss.str().c_str(), ss.str().size());
     //! 响应头
+<<<<<<< HEAD
     ss.str("");
+=======
+    ss.str("");  //! 清空sstream
+>>>>>>> 8cdbf3f71c984f3a6a3726ff79e7cba1b1ad1ad4
     if (closeConnection_) {
         ss << "Connection: close" << enter;
 
@@ -29,4 +33,8 @@ void HttpResponse::appendToBuffer(Buffer *buffer) const {
     buffer->append(enter.c_str(), enter.size());
     //! 响应体
     buffer->append(body_.c_str(), body_.size());
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 8cdbf3f71c984f3a6a3726ff79e7cba1b1ad1ad4

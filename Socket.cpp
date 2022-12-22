@@ -17,13 +17,21 @@ Socket::~Socket() {
 
 void Socket::bindAddress(const InetAddress &localaddr) {
     if (bind(sockfd_, (sockaddr*)localaddr.getAddr(), sizeof(sockaddr_in)) != 0) {
+<<<<<<< HEAD
         LOG_FATAL("bind sockfd %d fail\n", sockfd_);
+=======
+        LOG_FATAL("bind sockfd %d fail, errno: %d\n", sockfd_, errno);
+>>>>>>> 8cdbf3f71c984f3a6a3726ff79e7cba1b1ad1ad4
     }
 }
 
 void Socket::listen() {
     if (::listen(sockfd_, 65536) != 0) {
+<<<<<<< HEAD
         LOG_FATAL("bind sockfd %d fail\n", sockfd_);
+=======
+        LOG_FATAL("bind sockfd %d fail, errno: %d\n", sockfd_, errno);
+>>>>>>> 8cdbf3f71c984f3a6a3726ff79e7cba1b1ad1ad4
     }
 }
 

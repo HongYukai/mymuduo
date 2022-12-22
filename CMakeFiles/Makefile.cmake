@@ -11,6 +11,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.16.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.16.3/CMakeSystem.cmake"
   "CMakeLists.txt"
+<<<<<<< HEAD
   "/usr/share/cmake-3.16/Modules/CMakeCCompiler.cmake.in"
   "/usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c"
   "/usr/share/cmake-3.16/Modules/CMakeCInformation.cmake"
@@ -91,6 +92,26 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-3.16/Modules/Internal/CMakeCheckCompilerFlag.cmake"
   "/usr/share/cmake-3.16/Modules/Internal/FeatureTesting.cmake"
   "/usr/share/cmake-3.16/Modules/Platform/Linux-Determine-CXX.cmake"
+=======
+<<<<<<< HEAD
+  "Logger_Helper.h.in"
+=======
+>>>>>>> 621da876cdd7a7a2342272d5ce339afcfe6d5b01
+  "/usr/share/cmake-3.16/Modules/CMakeCInformation.cmake"
+  "/usr/share/cmake-3.16/Modules/CMakeCXXInformation.cmake"
+  "/usr/share/cmake-3.16/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake"
+  "/usr/share/cmake-3.16/Modules/CMakeCommonLanguageInclude.cmake"
+  "/usr/share/cmake-3.16/Modules/CMakeGenericSystem.cmake"
+  "/usr/share/cmake-3.16/Modules/CMakeInitializeConfigs.cmake"
+  "/usr/share/cmake-3.16/Modules/CMakeLanguageInformation.cmake"
+  "/usr/share/cmake-3.16/Modules/CMakeSystemSpecificInformation.cmake"
+  "/usr/share/cmake-3.16/Modules/CMakeSystemSpecificInitialize.cmake"
+  "/usr/share/cmake-3.16/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+  "/usr/share/cmake-3.16/Modules/Compiler/GNU-C.cmake"
+  "/usr/share/cmake-3.16/Modules/Compiler/GNU-CXX.cmake"
+  "/usr/share/cmake-3.16/Modules/Compiler/GNU.cmake"
+  "/usr/share/cmake-3.16/Modules/Internal/CMakeCheckCompilerFlag.cmake"
+>>>>>>> 8cdbf3f71c984f3a6a3726ff79e7cba1b1ad1ad4
   "/usr/share/cmake-3.16/Modules/Platform/Linux-GNU-C.cmake"
   "/usr/share/cmake-3.16/Modules/Platform/Linux-GNU-CXX.cmake"
   "/usr/share/cmake-3.16/Modules/Platform/Linux-GNU.cmake"
@@ -106,11 +127,18 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
+<<<<<<< HEAD
   "CMakeFiles/3.16.3/CMakeSystem.cmake"
   "CMakeFiles/3.16.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.16.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.16.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.16.3/CMakeCXXCompiler.cmake"
+=======
+<<<<<<< HEAD
+  "Logger_Helper.h"
+=======
+>>>>>>> 621da876cdd7a7a2342272d5ce339afcfe6d5b01
+>>>>>>> 8cdbf3f71c984f3a6a3726ff79e7cba1b1ad1ad4
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 

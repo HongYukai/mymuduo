@@ -209,6 +209,15 @@ CMAKE_STRIP:FILEPATH=/usr/bin/strip
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+//Use Release Mode
+RELEASE:BOOL=ON
+
+=======
+>>>>>>> 621da876cdd7a7a2342272d5ce339afcfe6d5b01
+>>>>>>> 8cdbf3f71c984f3a6a3726ff79e7cba1b1ad1ad4
 //Value Computed by CMake
 mymuduo_BINARY_DIR:STATIC=/home/hongyk/mymuduo
 

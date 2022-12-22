@@ -37,6 +37,13 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  "."
+=======
+>>>>>>> 621da876cdd7a7a2342272d5ce339afcfe6d5b01
+>>>>>>> 8cdbf3f71c984f3a6a3726ff79e7cba1b1ad1ad4
   )
 
 # Targets to which this target links.

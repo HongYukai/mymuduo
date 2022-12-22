@@ -6,6 +6,10 @@
 #define MYMUDUO_HTTPCONTEXT_H
 
 #include "Buffer.h"
+<<<<<<< HEAD
+=======
+#include "Logger.h"
+>>>>>>> 8cdbf3f71c984f3a6a3726ff79e7cba1b1ad1ad4
 #include "HttpRequest.h"
 
 class HttpContext{

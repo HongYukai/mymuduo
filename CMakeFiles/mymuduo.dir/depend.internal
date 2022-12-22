@@ -7,6 +7,13 @@ CMakeFiles/mymuduo.dir/Acceptor.cpp.o
  /home/hongyk/mymuduo/Channel.h
  /home/hongyk/mymuduo/InetAddress.h
  /home/hongyk/mymuduo/Logger.h
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+ /home/hongyk/mymuduo/Logger_Helper.h
+=======
+>>>>>>> 621da876cdd7a7a2342272d5ce339afcfe6d5b01
+>>>>>>> 8cdbf3f71c984f3a6a3726ff79e7cba1b1ad1ad4
  /home/hongyk/mymuduo/Socket.h
  /home/hongyk/mymuduo/Timestamp.h
  /home/hongyk/mymuduo/noncopyable.h
@@ -19,6 +26,13 @@ CMakeFiles/mymuduo.dir/Channel.cpp.o
  /home/hongyk/mymuduo/CurrentThread.h
  /home/hongyk/mymuduo/EventLoop.h
  /home/hongyk/mymuduo/Logger.h
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+ /home/hongyk/mymuduo/Logger_Helper.h
+=======
+>>>>>>> 621da876cdd7a7a2342272d5ce339afcfe6d5b01
+>>>>>>> 8cdbf3f71c984f3a6a3726ff79e7cba1b1ad1ad4
  /home/hongyk/mymuduo/Timestamp.h
  /home/hongyk/mymuduo/noncopyable.h
 CMakeFiles/mymuduo.dir/CurrentThread.cpp.o
@@ -34,6 +48,13 @@ CMakeFiles/mymuduo.dir/EpollPoller.cpp.o
  /home/hongyk/mymuduo/EpollPoller.cpp
  /home/hongyk/mymuduo/EpollPoller.h
  /home/hongyk/mymuduo/Logger.h
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+ /home/hongyk/mymuduo/Logger_Helper.h
+=======
+>>>>>>> 621da876cdd7a7a2342272d5ce339afcfe6d5b01
+>>>>>>> 8cdbf3f71c984f3a6a3726ff79e7cba1b1ad1ad4
  /home/hongyk/mymuduo/Poller.h
  /home/hongyk/mymuduo/Timestamp.h
  /home/hongyk/mymuduo/noncopyable.h
@@ -43,6 +64,13 @@ CMakeFiles/mymuduo.dir/EventLoop.cpp.o
  /home/hongyk/mymuduo/EventLoop.cpp
  /home/hongyk/mymuduo/EventLoop.h
  /home/hongyk/mymuduo/Logger.h
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+ /home/hongyk/mymuduo/Logger_Helper.h
+=======
+>>>>>>> 621da876cdd7a7a2342272d5ce339afcfe6d5b01
+>>>>>>> 8cdbf3f71c984f3a6a3726ff79e7cba1b1ad1ad4
  /home/hongyk/mymuduo/Poller.h
  /home/hongyk/mymuduo/Timer.h
  /home/hongyk/mymuduo/TimerHeap.h
@@ -71,7 +99,18 @@ CMakeFiles/mymuduo.dir/HttpContext.cpp.o
  /home/hongyk/mymuduo/HttpContext.cpp
  /home/hongyk/mymuduo/HttpContext.h
  /home/hongyk/mymuduo/HttpRequest.h
+<<<<<<< HEAD
  /home/hongyk/mymuduo/Timestamp.h
+=======
+<<<<<<< HEAD
+ /home/hongyk/mymuduo/Logger.h
+ /home/hongyk/mymuduo/Logger_Helper.h
+ /home/hongyk/mymuduo/Timestamp.h
+ /home/hongyk/mymuduo/noncopyable.h
+=======
+ /home/hongyk/mymuduo/Timestamp.h
+>>>>>>> 621da876cdd7a7a2342272d5ce339afcfe6d5b01
+>>>>>>> 8cdbf3f71c984f3a6a3726ff79e7cba1b1ad1ad4
 CMakeFiles/mymuduo.dir/HttpRequest.cpp.o
  /home/hongyk/mymuduo/HttpRequest.cpp
  /home/hongyk/mymuduo/HttpRequest.h
@@ -95,6 +134,13 @@ CMakeFiles/mymuduo.dir/HttpServer.cpp.o
  /home/hongyk/mymuduo/HttpServer.h
  /home/hongyk/mymuduo/InetAddress.h
  /home/hongyk/mymuduo/Logger.h
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+ /home/hongyk/mymuduo/Logger_Helper.h
+=======
+>>>>>>> 621da876cdd7a7a2342272d5ce339afcfe6d5b01
+>>>>>>> 8cdbf3f71c984f3a6a3726ff79e7cba1b1ad1ad4
  /home/hongyk/mymuduo/Socket.h
  /home/hongyk/mymuduo/TcpConnection.h
  /home/hongyk/mymuduo/TcpServer.h
@@ -106,6 +152,13 @@ CMakeFiles/mymuduo.dir/InetAddress.cpp.o
 CMakeFiles/mymuduo.dir/Logger.cpp.o
  /home/hongyk/mymuduo/Logger.cpp
  /home/hongyk/mymuduo/Logger.h
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+ /home/hongyk/mymuduo/Logger_Helper.h
+=======
+>>>>>>> 621da876cdd7a7a2342272d5ce339afcfe6d5b01
+>>>>>>> 8cdbf3f71c984f3a6a3726ff79e7cba1b1ad1ad4
  /home/hongyk/mymuduo/Timestamp.h
  /home/hongyk/mymuduo/noncopyable.h
 CMakeFiles/mymuduo.dir/Poller.cpp.o
@@ -117,6 +170,13 @@ CMakeFiles/mymuduo.dir/Poller.cpp.o
 CMakeFiles/mymuduo.dir/Socket.cpp.o
  /home/hongyk/mymuduo/InetAddress.h
  /home/hongyk/mymuduo/Logger.h
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+ /home/hongyk/mymuduo/Logger_Helper.h
+=======
+>>>>>>> 621da876cdd7a7a2342272d5ce339afcfe6d5b01
+>>>>>>> 8cdbf3f71c984f3a6a3726ff79e7cba1b1ad1ad4
  /home/hongyk/mymuduo/Socket.cpp
  /home/hongyk/mymuduo/Socket.h
  /home/hongyk/mymuduo/noncopyable.h
@@ -130,6 +190,13 @@ CMakeFiles/mymuduo.dir/TcpConnection.cpp.o
  /home/hongyk/mymuduo/HttpRequest.h
  /home/hongyk/mymuduo/InetAddress.h
  /home/hongyk/mymuduo/Logger.h
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+ /home/hongyk/mymuduo/Logger_Helper.h
+=======
+>>>>>>> 621da876cdd7a7a2342272d5ce339afcfe6d5b01
+>>>>>>> 8cdbf3f71c984f3a6a3726ff79e7cba1b1ad1ad4
  /home/hongyk/mymuduo/Socket.h
  /home/hongyk/mymuduo/TcpConnection.cpp
  /home/hongyk/mymuduo/TcpConnection.h
@@ -147,6 +214,13 @@ CMakeFiles/mymuduo.dir/TcpServer.cpp.o
  /home/hongyk/mymuduo/HttpRequest.h
  /home/hongyk/mymuduo/InetAddress.h
  /home/hongyk/mymuduo/Logger.h
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+ /home/hongyk/mymuduo/Logger_Helper.h
+=======
+>>>>>>> 621da876cdd7a7a2342272d5ce339afcfe6d5b01
+>>>>>>> 8cdbf3f71c984f3a6a3726ff79e7cba1b1ad1ad4
  /home/hongyk/mymuduo/Socket.h
  /home/hongyk/mymuduo/TcpConnection.h
  /home/hongyk/mymuduo/TcpServer.cpp
@@ -167,6 +241,13 @@ CMakeFiles/mymuduo.dir/TimerHeap.cpp.o
  /home/hongyk/mymuduo/CurrentThread.h
  /home/hongyk/mymuduo/EventLoop.h
  /home/hongyk/mymuduo/Logger.h
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+ /home/hongyk/mymuduo/Logger_Helper.h
+=======
+>>>>>>> 621da876cdd7a7a2342272d5ce339afcfe6d5b01
+>>>>>>> 8cdbf3f71c984f3a6a3726ff79e7cba1b1ad1ad4
  /home/hongyk/mymuduo/Timer.h
  /home/hongyk/mymuduo/TimerHeap.cpp
  /home/hongyk/mymuduo/TimerHeap.h

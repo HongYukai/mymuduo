@@ -32,7 +32,11 @@ public:
     void addHeader(const std::string& field, const std::string& value) {
         headers_[field] = value;
     }
+<<<<<<< HEAD
     void setBody(const std::string& body) {
+=======
+    void setBody(const std::string body) {
+>>>>>>> 8cdbf3f71c984f3a6a3726ff79e7cba1b1ad1ad4
         body_ = body;
     }
     void appendToBuffer(Buffer* buffer) const;

@@ -6,6 +6,13 @@ CMakeFiles/mymuduo.dir/Acceptor.cpp.o: Acceptor.h
 CMakeFiles/mymuduo.dir/Acceptor.cpp.o: Channel.h
 CMakeFiles/mymuduo.dir/Acceptor.cpp.o: InetAddress.h
 CMakeFiles/mymuduo.dir/Acceptor.cpp.o: Logger.h
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+CMakeFiles/mymuduo.dir/Acceptor.cpp.o: Logger_Helper.h
+=======
+>>>>>>> 621da876cdd7a7a2342272d5ce339afcfe6d5b01
+>>>>>>> 8cdbf3f71c984f3a6a3726ff79e7cba1b1ad1ad4
 CMakeFiles/mymuduo.dir/Acceptor.cpp.o: Socket.h
 CMakeFiles/mymuduo.dir/Acceptor.cpp.o: Timestamp.h
 CMakeFiles/mymuduo.dir/Acceptor.cpp.o: noncopyable.h
@@ -18,6 +25,13 @@ CMakeFiles/mymuduo.dir/Channel.cpp.o: Channel.h
 CMakeFiles/mymuduo.dir/Channel.cpp.o: CurrentThread.h
 CMakeFiles/mymuduo.dir/Channel.cpp.o: EventLoop.h
 CMakeFiles/mymuduo.dir/Channel.cpp.o: Logger.h
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+CMakeFiles/mymuduo.dir/Channel.cpp.o: Logger_Helper.h
+=======
+>>>>>>> 621da876cdd7a7a2342272d5ce339afcfe6d5b01
+>>>>>>> 8cdbf3f71c984f3a6a3726ff79e7cba1b1ad1ad4
 CMakeFiles/mymuduo.dir/Channel.cpp.o: Timestamp.h
 CMakeFiles/mymuduo.dir/Channel.cpp.o: noncopyable.h
 
@@ -33,6 +47,13 @@ CMakeFiles/mymuduo.dir/EpollPoller.cpp.o: Channel.h
 CMakeFiles/mymuduo.dir/EpollPoller.cpp.o: EpollPoller.cpp
 CMakeFiles/mymuduo.dir/EpollPoller.cpp.o: EpollPoller.h
 CMakeFiles/mymuduo.dir/EpollPoller.cpp.o: Logger.h
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+CMakeFiles/mymuduo.dir/EpollPoller.cpp.o: Logger_Helper.h
+=======
+>>>>>>> 621da876cdd7a7a2342272d5ce339afcfe6d5b01
+>>>>>>> 8cdbf3f71c984f3a6a3726ff79e7cba1b1ad1ad4
 CMakeFiles/mymuduo.dir/EpollPoller.cpp.o: Poller.h
 CMakeFiles/mymuduo.dir/EpollPoller.cpp.o: Timestamp.h
 CMakeFiles/mymuduo.dir/EpollPoller.cpp.o: noncopyable.h
@@ -42,6 +63,13 @@ CMakeFiles/mymuduo.dir/EventLoop.cpp.o: CurrentThread.h
 CMakeFiles/mymuduo.dir/EventLoop.cpp.o: EventLoop.cpp
 CMakeFiles/mymuduo.dir/EventLoop.cpp.o: EventLoop.h
 CMakeFiles/mymuduo.dir/EventLoop.cpp.o: Logger.h
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+CMakeFiles/mymuduo.dir/EventLoop.cpp.o: Logger_Helper.h
+=======
+>>>>>>> 621da876cdd7a7a2342272d5ce339afcfe6d5b01
+>>>>>>> 8cdbf3f71c984f3a6a3726ff79e7cba1b1ad1ad4
 CMakeFiles/mymuduo.dir/EventLoop.cpp.o: Poller.h
 CMakeFiles/mymuduo.dir/EventLoop.cpp.o: Timer.h
 CMakeFiles/mymuduo.dir/EventLoop.cpp.o: TimerHeap.h
@@ -70,7 +98,18 @@ CMakeFiles/mymuduo.dir/HttpContext.cpp.o: Buffer.h
 CMakeFiles/mymuduo.dir/HttpContext.cpp.o: HttpContext.cpp
 CMakeFiles/mymuduo.dir/HttpContext.cpp.o: HttpContext.h
 CMakeFiles/mymuduo.dir/HttpContext.cpp.o: HttpRequest.h
+<<<<<<< HEAD
 CMakeFiles/mymuduo.dir/HttpContext.cpp.o: Timestamp.h
+=======
+<<<<<<< HEAD
+CMakeFiles/mymuduo.dir/HttpContext.cpp.o: Logger.h
+CMakeFiles/mymuduo.dir/HttpContext.cpp.o: Logger_Helper.h
+CMakeFiles/mymuduo.dir/HttpContext.cpp.o: Timestamp.h
+CMakeFiles/mymuduo.dir/HttpContext.cpp.o: noncopyable.h
+=======
+CMakeFiles/mymuduo.dir/HttpContext.cpp.o: Timestamp.h
+>>>>>>> 621da876cdd7a7a2342272d5ce339afcfe6d5b01
+>>>>>>> 8cdbf3f71c984f3a6a3726ff79e7cba1b1ad1ad4
 
 CMakeFiles/mymuduo.dir/HttpRequest.cpp.o: HttpRequest.cpp
 CMakeFiles/mymuduo.dir/HttpRequest.cpp.o: HttpRequest.h
@@ -94,6 +133,13 @@ CMakeFiles/mymuduo.dir/HttpServer.cpp.o: HttpServer.cpp
 CMakeFiles/mymuduo.dir/HttpServer.cpp.o: HttpServer.h
 CMakeFiles/mymuduo.dir/HttpServer.cpp.o: InetAddress.h
 CMakeFiles/mymuduo.dir/HttpServer.cpp.o: Logger.h
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+CMakeFiles/mymuduo.dir/HttpServer.cpp.o: Logger_Helper.h
+=======
+>>>>>>> 621da876cdd7a7a2342272d5ce339afcfe6d5b01
+>>>>>>> 8cdbf3f71c984f3a6a3726ff79e7cba1b1ad1ad4
 CMakeFiles/mymuduo.dir/HttpServer.cpp.o: Socket.h
 CMakeFiles/mymuduo.dir/HttpServer.cpp.o: TcpConnection.h
 CMakeFiles/mymuduo.dir/HttpServer.cpp.o: TcpServer.h
@@ -105,6 +151,13 @@ CMakeFiles/mymuduo.dir/InetAddress.cpp.o: InetAddress.h
 
 CMakeFiles/mymuduo.dir/Logger.cpp.o: Logger.cpp
 CMakeFiles/mymuduo.dir/Logger.cpp.o: Logger.h
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+CMakeFiles/mymuduo.dir/Logger.cpp.o: Logger_Helper.h
+=======
+>>>>>>> 621da876cdd7a7a2342272d5ce339afcfe6d5b01
+>>>>>>> 8cdbf3f71c984f3a6a3726ff79e7cba1b1ad1ad4
 CMakeFiles/mymuduo.dir/Logger.cpp.o: Timestamp.h
 CMakeFiles/mymuduo.dir/Logger.cpp.o: noncopyable.h
 
@@ -116,6 +169,13 @@ CMakeFiles/mymuduo.dir/Poller.cpp.o: noncopyable.h
 
 CMakeFiles/mymuduo.dir/Socket.cpp.o: InetAddress.h
 CMakeFiles/mymuduo.dir/Socket.cpp.o: Logger.h
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+CMakeFiles/mymuduo.dir/Socket.cpp.o: Logger_Helper.h
+=======
+>>>>>>> 621da876cdd7a7a2342272d5ce339afcfe6d5b01
+>>>>>>> 8cdbf3f71c984f3a6a3726ff79e7cba1b1ad1ad4
 CMakeFiles/mymuduo.dir/Socket.cpp.o: Socket.cpp
 CMakeFiles/mymuduo.dir/Socket.cpp.o: Socket.h
 CMakeFiles/mymuduo.dir/Socket.cpp.o: noncopyable.h
@@ -129,6 +189,13 @@ CMakeFiles/mymuduo.dir/TcpConnection.cpp.o: HttpContext.h
 CMakeFiles/mymuduo.dir/TcpConnection.cpp.o: HttpRequest.h
 CMakeFiles/mymuduo.dir/TcpConnection.cpp.o: InetAddress.h
 CMakeFiles/mymuduo.dir/TcpConnection.cpp.o: Logger.h
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+CMakeFiles/mymuduo.dir/TcpConnection.cpp.o: Logger_Helper.h
+=======
+>>>>>>> 621da876cdd7a7a2342272d5ce339afcfe6d5b01
+>>>>>>> 8cdbf3f71c984f3a6a3726ff79e7cba1b1ad1ad4
 CMakeFiles/mymuduo.dir/TcpConnection.cpp.o: Socket.h
 CMakeFiles/mymuduo.dir/TcpConnection.cpp.o: TcpConnection.cpp
 CMakeFiles/mymuduo.dir/TcpConnection.cpp.o: TcpConnection.h
@@ -146,6 +213,13 @@ CMakeFiles/mymuduo.dir/TcpServer.cpp.o: HttpContext.h
 CMakeFiles/mymuduo.dir/TcpServer.cpp.o: HttpRequest.h
 CMakeFiles/mymuduo.dir/TcpServer.cpp.o: InetAddress.h
 CMakeFiles/mymuduo.dir/TcpServer.cpp.o: Logger.h
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+CMakeFiles/mymuduo.dir/TcpServer.cpp.o: Logger_Helper.h
+=======
+>>>>>>> 621da876cdd7a7a2342272d5ce339afcfe6d5b01
+>>>>>>> 8cdbf3f71c984f3a6a3726ff79e7cba1b1ad1ad4
 CMakeFiles/mymuduo.dir/TcpServer.cpp.o: Socket.h
 CMakeFiles/mymuduo.dir/TcpServer.cpp.o: TcpConnection.h
 CMakeFiles/mymuduo.dir/TcpServer.cpp.o: TcpServer.cpp
@@ -166,6 +240,13 @@ CMakeFiles/mymuduo.dir/TimerHeap.cpp.o: Clock.h
 CMakeFiles/mymuduo.dir/TimerHeap.cpp.o: CurrentThread.h
 CMakeFiles/mymuduo.dir/TimerHeap.cpp.o: EventLoop.h
 CMakeFiles/mymuduo.dir/TimerHeap.cpp.o: Logger.h
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+CMakeFiles/mymuduo.dir/TimerHeap.cpp.o: Logger_Helper.h
+=======
+>>>>>>> 621da876cdd7a7a2342272d5ce339afcfe6d5b01
+>>>>>>> 8cdbf3f71c984f3a6a3726ff79e7cba1b1ad1ad4
 CMakeFiles/mymuduo.dir/TimerHeap.cpp.o: Timer.h
 CMakeFiles/mymuduo.dir/TimerHeap.cpp.o: TimerHeap.cpp
 CMakeFiles/mymuduo.dir/TimerHeap.cpp.o: TimerHeap.h
